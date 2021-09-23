@@ -37,10 +37,16 @@ $(window).on('load', function () {
 	});
 
 
-	/* ########################################### hero parallax ############################################## */
-	window.onload = function () {
+	/* ########################################### hero parallax ############################################## */   
+    $(window).on('load resize', function () {
+        $('#element').css('display', '');
 
-		var parallaxBox = document.getElementById('parallax');
+        $('#l2, #l3, #l4, #l5, #l6, #l7, #l8, #l9').css('top','').css('left','').css('right','');
+        parallaxEffect();
+    });
+
+    function parallaxEffect() {
+        var parallaxBox = document.getElementById('parallax');
 		/*
 		 Fix js error, occurred at pages other than the home page. 
 		 When there're no parallax, just ignore the below
@@ -50,7 +56,7 @@ $(window).on('load', function () {
 			return;
 		}
 
-		var
+        var
 			/* c1left = document.getElementById('l1').offsetLeft,
 			c1top = document.getElementById('l1').offsetTop, */
 			c2left = document.getElementById('l2').offsetLeft,
@@ -61,14 +67,14 @@ $(window).on('load', function () {
 			c4top = document.getElementById('l4').offsetTop,
 			c5left = document.getElementById('l5').offsetLeft,
 			c5top = document.getElementById('l5').offsetTop,
-			c6left = document.getElementById('l6').offsetLeft,
-			c6top = document.getElementById('l6').offsetTop,
+			// c6left = document.getElementById('l6').offsetLeft,
+			// c6top = document.getElementById('l6').offsetTop,
 			c7left = document.getElementById('l7').offsetLeft,
 			c7top = document.getElementById('l7').offsetTop,
 			c8left = document.getElementById('l8').offsetLeft,
-			c8top = document.getElementById('l8').offsetTop,
-			c9left = document.getElementById('l9').offsetLeft,
-			c9top = document.getElementById('l9').offsetTop;
+			c8top = document.getElementById('l8').offsetTop;
+			// c9left = document.getElementById('l9').offsetLeft,
+			// c9top = document.getElementById('l9').offsetTop;
 
 		parallaxBox.onmousemove = function (event) {
 			event = event || window.event;
@@ -76,18 +82,17 @@ $(window).on('load', function () {
 				y = event.clientY - parallaxBox.offsetTop;
 
 			/*  mouseParallax('l1', c1left, c1top, x, y, 5); */
-			mouseParallax('l2', c2left, c2top, x, y, 25);
-			mouseParallax('l3', c3left, c3top, x, y, 20);
-			mouseParallax('l4', c4left, c4top, x, y, 35);
-			mouseParallax('l5', c5left, c5top, x, y, 30);
-			mouseParallax('l6', c6left, c6top, x, y, 45);
+			mouseParallax('l2', c2left, c2top, x, y, 3);
+			mouseParallax('l3', c3left, c3top, x, y, 15);
+			mouseParallax('l4', c4left, c4top, x, y, 15);
+			mouseParallax('l5', c5left, c5top, x, y, 150);
+			// mouseParallax('l6', c6left, c6top, x, y, 45);
 			mouseParallax('l7', c7left, c7top, x, y, 30);
 			mouseParallax('l8', c8left, c8top, x, y, 25);
-			mouseParallax('l9', c9left, c9top, x, y, 40);
+			// mouseParallax('l9', c9left, c9top, x, y, 40);
 		};
-
-	};
-
+    }
+    
 	function mouseParallax(id, left, top, mouseX, mouseY, speed) {
 		var obj = document.getElementById(id);
 		var parentObj = obj.parentNode,

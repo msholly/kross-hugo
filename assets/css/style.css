@@ -3,18 +3,17 @@
 PROJECT: Project Name
 VERSION: Versoin Number
 -------------------------------------------------------------------*/
-@import "https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Roboto:300,400,500,700";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto+Condensed&display=swap');
 
-@font-face {
-  font-family: bwnistaint-xbd;
-  src: url(../fonts/BwNistaInt-xBd.woff) format("woff");
+/* @font-face {
+  font-family: 'Roboto Condensed';
   font-style: normal;
   font-display: swap
-}
+} */
 
 body {
   line-height: 1.2;
-  font-family: roboto, sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 15px;
   color: #4c4c4c
@@ -25,7 +24,7 @@ p {
   color: #4c4c4c;
   font-size: 15px;
   line-height: 1.8;
-  font-family: roboto, sans-serif
+  font-family: 'Roboto Condensed', sans-serif
 }
 
 h1,
@@ -35,7 +34,7 @@ h4,
 h5,
 h6 {
   color: #000;
-  font-family: playfair display, serif;
+  font-family: 'Montserrat', sans-serif;
   line-height: 1.2
 }
 
@@ -48,7 +47,7 @@ h1,
 
   h1,
   .h1 {
-    font-size: 65px
+    font-size: 45px
   }
 }
 
@@ -87,12 +86,12 @@ h6,
 
 .btn {
   font-size: 22px;
-  font-family: playfair display, serif;
+  font-family: 'Roboto Condensed', sans-serif;
   text-transform: capitalize;
   padding: 16px 44px;
   border-radius: 5px;
   font-weight: 600;
-  border: 0;
+  /* border: 0; */
   position: relative;
   z-index: 1;
   transition: .2s ease
@@ -223,7 +222,7 @@ a:hover {
 
 .section-title {
   margin-bottom: 80px;
-  font-family: bwnistaint-xbd
+  font-family: 'Montserrat', sans-serif
 }
 
 .bg-cover {
@@ -332,15 +331,15 @@ a:hover {
 }
 
 .font-primary {
-  font-family: roboto, serif !important
+  font-family: 'Roboto Condensed', sans-serif !important
 }
 
 .font-secondary {
-  font-family: playfair display, serif !important
+  font-family: 'Montserrat', sans-serif !important
 }
 
 .font-tertiary {
-  font-family: bwnistaint-xbd !important
+    font-family: 'Montserrat', sans-serif !important
 }
 
 .shadow {
@@ -440,12 +439,13 @@ textarea.form-control {
 @media(max-width:991px) {
   .navigation {
     padding: 20px;
-    background: var(--primary-color)
+    /* background: var(--primary-color) */
   }
 }
 
 .navbar .nav-item .nav-link {
-  font-family: bwnistaint-xbd;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: bold;
   text-transform: uppercase;
   padding: 15px
 }
@@ -459,11 +459,14 @@ textarea.form-control {
 }
 
 .hero-area {
-  padding: 250px 0 200px;
+  padding: 300px 0 250px;
   position: relative
 }
 
 @media(max-width:767px) {
+    .navbar-brand h3 {
+        font-size: 20px;
+    }
   .hero-area {
     padding: 200px 0 150px;
     overflow: hidden
@@ -477,7 +480,8 @@ textarea.form-control {
 
 .layer {
   position: absolute;
-  z-index: 1
+  z-index: 1;
+  /* transition: all .1s ease-in-out ; */
 }
 
 #l1 {
@@ -486,18 +490,18 @@ textarea.form-control {
 }
 
 #l2 {
-  top: 190px;
-  left: -250px
+  top: -50px;
+  left: -50px
 }
 
 #l3 {
-  top: 200px;
-  left: 40%
+  top: -25px;
+  left: -25px
 }
 
 #l4 {
-  top: 200px;
-  right: 40%
+  top: -25px;
+  right: -25px;
 }
 
 #l5 {
@@ -515,9 +519,17 @@ textarea.form-control {
   left: 20%
 }
 
+#l7 img {
+    width: 50%;
+}
+
 #l8 {
-  bottom: 160px;
-  right: 45%
+  top: 160px;
+  right: 25%
+}
+
+#l8 img {
+    width: 30%;
 }
 
 #l9 {
@@ -527,8 +539,18 @@ textarea.form-control {
 
 .layer-bg {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0
+}
+
+@media (max-width: 767.98px) {
+    .layer-bg img {
+        max-width: unset !important;
+        width: auto !important;
+    }
+    .layer {
+        display: none;
+    }
 }
 
 .progress-wrapper {
@@ -760,7 +782,7 @@ blockquote {
 }
 
 .content strong {
-  font-family: playfair display, serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 22px;
   font-weight: 400;
   color: #000;
